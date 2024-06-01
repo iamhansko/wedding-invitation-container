@@ -39,7 +39,19 @@ npm install
 npm run dev
 ```
 
+## Docker
+```bash
+# Required : Docker or Docker Desktop
 
+# Dev (Image Size : 540+ MB)
+docker build -t wedding-invitation .
+docker run -dp 3000:5173 wedding-invitation
+
+# Prod (Image Size : 190+ MB)
+npm run build
+docker build -f Dockerfile.prod -t wedding-invitation .
+docker run -dp 3000:80 wedding-invitation
+```
 
 ## 커스텀 체크리스트
 
